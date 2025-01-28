@@ -46,7 +46,7 @@ const Home = () => {
 
     const getAllUsers = async () => {
         try {
-            axios.get('http://localhost:3000/api/user/getusers')
+            axios.get('https://skyniche.onrender.com/api/user/getusers')
                 .then((response) => setData(response.data.data))
                 .catch((error) => console.log("Error", error));
         } catch (error) {
@@ -60,7 +60,7 @@ const Home = () => {
             formData.append(val, values[val]);
         }
         try {
-            axios.post('http://localhost:3000/api/user/adduser', formData, {
+            axios.post('https://skyniche.onrender.com/api/user/adduser', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             }).then(() => getAllUsers())
               .catch((error) => console.log("Error", error));
@@ -75,7 +75,7 @@ const Home = () => {
             formData.append(val, values[val]);
         }
         try {
-            axios.patch('http://localhost:3000/api/user/updateuser', formData, {
+            axios.patch('https://skyniche.onrender.com/api/user/updateuser', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             }).then(() => getAllUsers())
               .catch((error) => console.log("Error", error));
